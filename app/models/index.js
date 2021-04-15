@@ -1,6 +1,7 @@
 const dbConfig = require ("../config/db.config");
 
 const Sequelize = require ("sequelize")
+const moment = require('moment')
 
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD,{
 

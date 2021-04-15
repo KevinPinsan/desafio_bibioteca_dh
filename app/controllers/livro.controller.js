@@ -1,6 +1,7 @@
 const db = require("../models");
 const Sequelize = require('sequelize');
 const Op = db.sequelize.Op;
+const {v4: uuidv4} = require("uuid");
 
 Livro = db.livro;
 
@@ -51,7 +52,7 @@ exports.findAllByAuthor = (req, res) =>{
     Livro.findAll({
         where: {
           autor:{
-            [Sequelize.Op.like]: `%${req.params.autor}%` 
+            [Op.like]: `%${req.params.autor}%` 
           }
         }
       })
